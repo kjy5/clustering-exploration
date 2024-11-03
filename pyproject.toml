@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clustering-exploration"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Kenneth Yang", email = "microbob@is88.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "notebook==7.2.2"
+]
+
+[project.urls]
+Documentation = "https://github.com/Kenneth Yang/clustering-exploration#readme"
+Issues = "https://github.com/Kenneth Yang/clustering-exploration/issues"
+Source = "https://github.com/Kenneth Yang/clustering-exploration"
+
+[tool.hatch.version]
+path = "src/clustering_exploration/__about__.py"
+
+[tool.hatch.envs.default]
+python = "3.13"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/clustering_exploration tests}"
+
+[tool.coverage.run]
+source_pkgs = ["clustering_exploration", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/clustering_exploration/__about__.py",
+]
+
+[tool.coverage.paths]
+clustering_exploration = ["src/clustering_exploration", "*/clustering-exploration/src/clustering_exploration"]
+tests = ["tests", "*/clustering-exploration/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
