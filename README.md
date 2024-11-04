@@ -9,7 +9,7 @@
 
 ## Installation
 
-- Install Hatch
+- [Install Hatch](https://hatch.pypa.io/latest/install/) (this is a python environment manager)
 - Clone repository
 - Run `hatch shell` to enter the virtual environment
 - Put `alpha_vals.csv` and `gt.png` in `src/clustering_exploration/data/` directory
