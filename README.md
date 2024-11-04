@@ -1,8 +1,5 @@
 # Clustering Exploration
 
-[![PyPI - Version](https://img.shields.io/pypi/v/clustering-exploration.svg)](https://pypi.org/project/clustering-exploration)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/clustering-exploration.svg)](https://pypi.org/project/clustering-exploration)
-
 -----
 
 ## Table of Contents
@@ -12,9 +9,11 @@
 
 ## Installation
 
-```console
-pip install clustering-exploration
-```
+- Install Hatch
+- Clone repository
+- Run `hatch shell` to enter the virtual environment
+- Put `alpha_vals.csv` and `gt.png` in `src/clustering_exploration/data/` directory
+- Run through the notebooks in `src/cluster_exploration`.
 
 ## License
 
